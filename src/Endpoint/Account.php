@@ -35,8 +35,6 @@ class Account extends AbstractEndpoint
     {
         $path = sprintf('/%s/%s', self::ENDPOINT, $id);
 
-        $path = '/Account/0010Y00000dR2hBQAS/Contacts';
-
         return $this->client->get($path);
     }
 
