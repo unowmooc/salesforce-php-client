@@ -2,6 +2,8 @@
 
 namespace Salesforce\Endpoint;
 
+use Salesforce\Formatter;
+
 /**
  * @package Salesforce\Endpoint
  */
@@ -23,7 +25,7 @@ class Account extends AbstractEndpoint
             $path .= '/?'.http_build_query($parameters);
         }
 
-        return $this->client->get($path);
+        return Formatter::formatRecords($this->client->get($path));
     }
 
     /**
