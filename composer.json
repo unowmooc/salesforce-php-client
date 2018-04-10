@@ -1,5 +1,5 @@
 {
-  "name": "unow/salesforce-php-client",
+  "name": "unowmooc/salesforce-php-client",
   "description": "Salesforce PHP client",
   "type": "library",
   "license": "MIT",
