@@ -49,6 +49,6 @@ class Account extends AbstractEndpoint
     {
         $path = sprintf('/%s/%s/Contacts', self::ENDPOINT, $id);
 
-        return $this->client->get($path);
+        return Formatter::formatRecords($this->client->get($path));
     }
 }
