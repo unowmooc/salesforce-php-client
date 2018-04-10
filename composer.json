@@ -1,0 +1,30 @@
+{
+  "name": "unow/salesforce-php-client",
+  "description": "Salesforce PHP client",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rémy Ferrand",
+      "email": "rferrand@unow.fr"
+    }
+  ],
+  "require": {
+    "psr/http-message": "^1.0",
+    "php-http/client-implementation": "^1.0",
+    "php-http/httplug": "^1.0",
+    "php-http/message-factory": "^1.0",
+    "php-http/discovery": "^1.0",
+    "php-http/client-common": "^1.7"
+  },
+  "require-dev": {
+    "php-http/mock-client": "^1.0",
+    "php-http/message": "^1.0",
+    "guzzlehttp/psr7": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Salesforce\\": "src/"
+    }
+  }
+}
