@@ -100,13 +100,4 @@ class Client
 
         return $data;
     }
-
-    protected function beautifyColumns($columns)
-    {
-        return array_reduce($columns, function ($sum, $item) {
-            $sum[$item['fieldNameOrPath']] = $item['value'];
-
-            return $sum;
-        }, []);
-    }
 }
