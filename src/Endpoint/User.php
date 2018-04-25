@@ -7,7 +7,7 @@ namespace Salesforce\Endpoint;
  */
 class User extends AbstractEndpoint
 {
-    const ENDPOINT = 'User';
+    const ENDPOINT = 'sobjects/User';
 
     /**
      * @param string $id
