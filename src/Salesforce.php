@@ -23,7 +23,7 @@ use Salesforce\Endpoint\User;
 class Salesforce
 {
     const LOGIN_URL = 'https://login.salesforce.com/services/oauth2/token';
-    const BASE_URI = '/services/data/v42.0/sobjects';
+    const BASE_URI = '/services/data/v42.0';
 
     /**
      * @var string
@@ -94,6 +94,19 @@ class Salesforce
         );
 
         return $client->post(self::LOGIN_URL, http_build_query($parameters));
+    }
+
+    public function query($parameters)
+    {
+        $path = '/query';
+
+        if (!empty($parameters)) {
+            $path .= '/?'.http_build_query($parameters);
+        }
+
+        $data = $this->client->get($path);
+
+        return $data['records'];
     }
 
     /**

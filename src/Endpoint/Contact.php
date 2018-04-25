@@ -7,7 +7,7 @@ namespace Salesforce\Endpoint;
  */
 class Contact extends AbstractEndpoint
 {
-    const ENDPOINT = 'Contact';
+    const ENDPOINT = 'sobjects/Contact';
 
     /**
      * @param string $id

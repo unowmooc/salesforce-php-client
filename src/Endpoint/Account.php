@@ -9,7 +9,7 @@ use Salesforce\Formatter;
  */
 class Account extends AbstractEndpoint
 {
-    const ENDPOINT = 'Account';
+    const ENDPOINT = 'sobjects/Account';
 
     /**
      * @param string $listViewId
