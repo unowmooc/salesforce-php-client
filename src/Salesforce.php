@@ -96,17 +96,24 @@ class Salesforce
         return $client->post(self::LOGIN_URL, http_build_query($parameters));
     }
 
-    public function query($parameters)
+    /**
+     * @param array $parameters
+     * @return array
+     */
+    public function query(array $parameters) : array
     {
-        $path = '/query';
-
-        if (!empty($parameters)) {
-            $path .= '/?'.http_build_query($parameters);
-        }
+        $path = '/query/?'.http_build_query($parameters);
 
         $data = $this->client->get($path);
+        $records = $data['records'];
 
-        return $data['records'];
+        while (isset($data['nextRecordsUrl'])) {
+            $id = explode('query/', $data['nextRecordsUrl'])[1];
+            $data = $this->client->get('/query/'.$id);
+            $records += $data['records'];
+        }
+
+        return $records;
     }
 
     /**
